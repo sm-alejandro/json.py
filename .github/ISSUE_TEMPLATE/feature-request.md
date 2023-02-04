@@ -1,7 +1,7 @@
 ---
-name: "[FR] "
+name: Feature Request
 about: Suggest an idea for this project
-title: ''
+title: "[FR]"
 labels: enhancement
 assignees: zilmosat
 
