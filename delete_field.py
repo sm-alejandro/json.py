@@ -1,6 +1,7 @@
 from pathlib import Path
 import argparse
 import json
+import re
 
 
 def parse_args():
@@ -20,7 +21,7 @@ def delete(data: dict, loc: str, key: str, rec: bool):
     def loop(dictionary):
         for key_, value_ in dictionary.items():
             if isinstance(value_, dict):
-                if loc is None or key_ == loc:
+                if loc is None or re.match(loc, key_):
                     try:
                         del value_[key]
                     except Exception:

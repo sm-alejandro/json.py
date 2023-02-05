@@ -1,6 +1,7 @@
 from pathlib import Path
 import argparse
 import json
+import re
 
 
 def parse_args():
@@ -18,7 +19,8 @@ def replace(data: dict, key: dict, loc: str, rec: bool):
     def loop(dictionary):
         for key_, value_ in dictionary.items():
             if isinstance(value_, dict):
-                if key_ == loc or not loc:
+                print(loc)
+                if not loc or re.match(loc, key_):
                     for k in key:
                         if k in value_:
                             value_[key[k]] = value_.pop(k)

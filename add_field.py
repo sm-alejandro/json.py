@@ -1,6 +1,7 @@
 from pathlib import Path
 import argparse
 import json
+import re
 
 
 def parse_args():
@@ -19,7 +20,7 @@ def add(data: dict, loc: str, key: str, val, rec: bool):
     def loop(dictionary):
         for key_, value_ in dictionary.items():
             if isinstance(value_, dict):
-                if loc is None or key_ == loc:
+                if loc is None or re.match(loc, key_):
                     value_.setdefault(key, val)
                 if rec or loc:
                     loop(value_)
