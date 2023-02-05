@@ -20,7 +20,7 @@ def replace(data: dict, key: dict, loc: str, rec: bool):
         for key_, value_ in dictionary.items():
             if isinstance(value_, dict):
                 print(loc)
-                if not loc or re.match(loc, key_):
+                if loc is None or re.match(loc, key_):
                     for k in key:
                         if k in value_:
                             value_[key[k]] = value_.pop(k)
