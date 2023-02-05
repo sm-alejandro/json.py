@@ -1,0 +1,14 @@
+{
+  "measurement_0": {
+    "wind": { "speed": "9"},
+    "rain": { "speed": "3" }
+  },
+  "measurement_1": {
+    "wind": { "speed": "5"},
+    "rain": { "speed": "3" }
+  },
+  "measurement_2": {
+    "wind": { "speed": "0"},
+    "rain": { "speed": "3" }
+  }
+}

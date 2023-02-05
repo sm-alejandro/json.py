@@ -1,0 +1,14 @@
+{
+  "measurement_0": {
+    "temperature": { "speed": "9" },
+    "rain": { "quantity": "3" }
+  },
+  "measurement_1": {
+    "temperature": { "speed": "5" },
+    "rain": { "quantity": "3" }
+  },
+  "measurement_2": {
+    "temperature": { "speed": "0" },
+    "rain": { "quantity": "3" }
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "measurement_0": {
+    "wind": { "speed": "9", "direction": "0" },
+    "rain": { "speed": "3" },
+    "timestamp": null
+  },
+  "measurement_1": {
+    "wind": { "speed": "5", "direction": "0" },
+    "rain": { "speed": "3" },
+    "timestamp": null
+  },
+  "measurement_2": {
+    "wind": { "speed": "0", "direction": "0" },
+    "rain": { "speed": "3" },
+    "timestamp": null
+  }
+}

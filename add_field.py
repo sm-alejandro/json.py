@@ -15,23 +15,24 @@ def parse_args():
     return parser.parse_args()
 
 
-def add(parser):
-    with open(parser.data, 'r') as json_file:
-        data = json.load(json_file)
-
+def add(data: dict, loc: str, key: str, val, rec: bool):
     def loop(dictionary):
-        for key, value in dictionary.items():
-            if isinstance(value, dict):
-                if parser.loc is None or key == parser.loc:
-                    value.setdefault(parser.key, parser.val)
-                if parser.rec or parser.loc:
-                    loop(value)
-
-    loop({'data': data})
-    # loop(data)   # this way ignores the first layer of elements
-    with open(parser.data, 'w') as json_file:
-        json.dump(data, json_file)
+        for key_, value_ in dictionary.items():
+            if isinstance(value_, dict):
+                if loc is None or key_ == loc:
+                    value_.setdefault(key, val)
+                if rec or loc:
+                    loop(value_)
+    loop(data)
+    return data
 
 
 if __name__ == "__main__":
-    add(parse_args())
+    parser = parse_args()
+    with open(parser.data, 'r') as json_file:
+        json_data = json.load(json_file)
+
+    result = add(data=json_data, loc=parser.loc, key=parser.key, val=parser.val, rec=parser.rec)
+
+    with open(parser.data, 'w') as json_file:
+        json.dump(result, json_file)
