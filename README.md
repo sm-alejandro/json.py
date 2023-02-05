@@ -3,11 +3,12 @@ Functions to bulk add/delete/modify json fields
 
 # PACKAGE USAGE
 import bulkjson
-def add(data: dict, loc: str, key: str, val, rec: bool)
 
-def delete(data: dict, loc: str, key: str, rec: bool):
+bulkjson.add(data: dict, loc: str, key: str, val, rec: bool)
 
-def replace(data: dict, loc: str, key: dict, rec: bool):
+bulkjson.delete(data: dict, loc: str, key: str, rec: bool):
+
+bulkjson.replace(data: dict, loc: str, key: dict, rec: bool):
 
 # CONSOLE USAGE (operations on example.json)
 
